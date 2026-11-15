@@ -271,6 +271,97 @@ input[type=range]{inline-size:100%;accent-color:var(--lapis);block-size:32px}
   *{animation:none!important;transition:none!important}
 }
 @media print{.rbar,.prog,.pager,.act{display:none}article.doc{padding-top:0}}
+
+/* ───────── امروز و بازی ───────── */
+.pcard{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:14px 16px;margin-block-end:12px}
+.pc-top{display:flex;align-items:center;gap:10px}
+.chipbtn{display:flex;align-items:center;gap:8px;flex:1;min-inline-size:0;background:var(--lapis-soft);color:var(--lapis);border-radius:14px;padding:8px 12px;text-align:start}
+.chipbtn b{font-size:16px}.chipbtn small{font-size:13px;opacity:.85}.chipbtn i{margin-inline-start:auto;font-style:normal;font-size:12px;font-weight:700;color:var(--ink2)}
+.stat{text-align:center;min-inline-size:56px}.stat b{display:block;font-size:20px;line-height:1.2;color:var(--gold-ink)}.stat small{font-size:12px;color:var(--ink2)}
+.lv{margin-block-start:10px;font-size:13px;color:var(--ink2)}.lv>span{font-weight:800;color:var(--ink)}.lv .bar{margin-block:5px}
+.today{display:flex;align-items:center;gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:16px 18px;margin-block-end:10px}
+.today h2{margin:0 0 4px;font-size:18px}.today p{margin:0;color:var(--ink2);font-size:15px;line-height:1.8}
+.ring{--p:0;inline-size:104px;block-size:104px;border-radius:50%;flex:none;display:grid;place-items:center;position:relative;
+  background:conic-gradient(from 0deg,var(--gold) calc(var(--p)*360deg),var(--line) 0);transform:scaleX(-1)}
+.ring::before{content:"";position:absolute;inset:11px;border-radius:50%;background:var(--surface)}
+.ring b{position:relative;transform:scaleX(-1);font-size:20px;color:var(--ink)}
+.ring.sm{inline-size:84px;block-size:84px;margin:0 auto 10px}.ring.sm::before{inset:9px}.ring.sm b{font-size:17px}
+.cta{display:flex;align-items:center;gap:14px;background:var(--lapis);color:var(--lapis-ink);border-radius:18px;padding:14px 16px;margin-block-end:12px}
+.cta>svg:first-child{inline-size:28px;block-size:28px;flex:none}.cta span{flex:1;min-inline-size:0}.cta b{display:block;font-size:17px}
+.cta small{display:block;opacity:.85;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cta>svg:last-child{inline-size:22px;block-size:22px;transform:scaleX(-1)}
+.week{display:flex;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px 14px;margin-block-end:6px}
+.wd{display:grid;justify-items:center;gap:3px}.wd small{font-size:12px;color:var(--ink2)}
+.wd i{inline-size:28px;block-size:28px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;color:var(--lapis-ink)}
+.wd.on i{background:var(--gold);border-color:var(--gold)}.wd.now i{border-color:var(--lapis)}.wd i svg{inline-size:16px;block-size:16px;stroke-width:3}
+.sh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:20px 2px 8px;font-size:17px}.sh small{font-size:12.5px;font-weight:500;color:var(--ink2)}
+.atg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.at{display:flex;flex-direction:column;gap:3px;background:var(--surface);border:1.5px solid var(--line);border-radius:16px;padding:12px 13px;min-block-size:104px}
+.at svg{inline-size:26px;block-size:26px;color:var(--lapis);margin-block-end:3px}.at b{font-size:15.5px}.at small{font-size:12.5px;color:var(--ink2);line-height:1.6}
+.at:active{background:var(--lapis-soft)}.at.lock{opacity:.55}.at.lock svg{color:var(--ink2)}
+.at.did{border-color:var(--gold)}.at.did svg{color:var(--gold)}
+.mosaic .mg{margin-block-end:12px}.mg>b{display:block;font-size:13.5px;color:var(--ink2);margin-block-end:5px}
+.mts{display:flex;flex-wrap:wrap;gap:5px}
+.mt{inline-size:36px;block-size:36px;border-radius:10px;display:grid;place-items:center;font-size:12.5px;font-weight:700;
+  background:color-mix(in srgb,var(--gold) calc(var(--c)*1%),var(--lapis-soft));color:var(--lapis);border:1px solid var(--line)}
+.mt[style*="--c:0"]:not([style*="--c:0."]){color:var(--ink2)}
+.mt.full{background:var(--gold);color:#fff;border-color:var(--gold)}.mt svg{inline-size:17px;block-size:17px;stroke-width:3}
+.bdg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.bd{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 12px;opacity:.5}
+.bd.on{opacity:1;border-color:var(--gold);background:var(--gold-soft)}
+.bd svg{inline-size:22px;block-size:22px;color:var(--gold)}.bd b{display:block;font-size:14px}.bd small{font-size:12px;color:var(--ink2);line-height:1.6;display:block}
+
+/* انتخاب سن */
+.obl{display:grid;gap:9px;margin-block:12px}
+.ob{display:grid;gap:1px;text-align:start;background:var(--surface);border:1.5px solid var(--line);border-radius:16px;padding:12px 15px}
+.ob b{font-size:17px;color:var(--lapis)}.ob small{font-size:13.5px;color:var(--ink)}.ob em{font-style:normal;font-size:12.5px;color:var(--ink2)}
+.ob:active{background:var(--lapis-soft);border-color:var(--lapis)}
+.skip{text-align:center;margin:6px 0 0}.lnk{color:var(--lapis);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
+
+/* صفحهٔ بازی */
+.pbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding-block-start:var(--safe-t)}
+.pbar-in{max-inline-size:44rem;margin-inline:auto;display:flex;align-items:center;gap:4px;padding:6px 8px;block-size:58px}
+.pbar .ttl{flex:1;font-weight:800;font-size:16px}.pcount{font-size:13px;color:var(--ink2);padding-inline:10px}
+.play{padding-block-start:10px}
+.ph2{margin-block-end:12px}.ph2 small{display:block;font-size:12.5px;color:var(--ink2)}.ph2 b{font-size:17px;color:var(--lapis)}
+.portion{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:6px 16px}
+.portion p{margin:.7em 0;font-size:var(--fs);line-height:var(--lh);font-family:var(--font)}
+.portion h3{margin:1em 0 .2em;font-size:calc(var(--fs)*1.02);color:var(--lapis);padding-inline-start:.6em;border-inline-start:3px solid var(--gold)}
+.small.cnt{text-align:center;margin-block:8px}
+.foot{position:sticky;bottom:0;padding:12px 0 calc(var(--safe-b) + 6px);background:linear-gradient(transparent,var(--paper) 30%)}
+.btn.wide{inline-size:100%;block-size:52px;font-size:17px}
+.kc{background:var(--surface);border:1.5px solid var(--lapis);border-radius:22px;padding:22px 20px;min-block-size:34vh;display:grid;align-content:center;gap:10px}
+.kc small{color:var(--ink2);font-size:14px}.kc p{margin:0;font-size:calc(var(--fs)*1.2);line-height:2.1;font-weight:600}
+.sp{block-size:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-block-end:14px}.sp i{display:block;block-size:100%;background:var(--gold);transition:inline-size .3s}
+.itm{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px 16px}
+.q{margin:0 0 14px;font-size:calc(var(--fs)*1.08);line-height:2.15;font-weight:600}
+.hint{margin:0 0 10px;color:var(--ink2);font-size:14px}
+.bl{display:inline-block;min-inline-size:3.2em;text-align:center;border-block-end:2.5px solid var(--gold);color:var(--gold-ink);font-weight:800;padding-inline:4px}
+.bl i{font-style:normal;opacity:.6}.bl.g{background:#d9f0dc;color:#1c5a2a;border-radius:6px}.bl.r{background:#f6dcd8;color:var(--danger);border-radius:6px}
+:root[data-theme="dark"] .bl.g{background:#1d3a24;color:#9ee6ae}:root[data-theme="dark"] .bl.r{background:#3d1f1b;color:#f2a79b}
+.opts{display:grid;gap:9px}
+.opt{min-block-size:52px;border:1.5px solid var(--line);border-radius:14px;background:var(--paper);font-size:calc(var(--fs)*.98);font-weight:700;padding:8px 12px}
+.opt:active:not(:disabled){background:var(--lapis-soft);border-color:var(--lapis)}
+.opt.ok{background:#d9f0dc;border-color:#2f8a46;color:#1c5a2a}.opt.bad{background:#f6dcd8;border-color:var(--danger);color:var(--danger)}
+:root[data-theme="dark"] .opt.ok{background:#1d3a24;color:#9ee6ae}:root[data-theme="dark"] .opt.bad{background:#3d1f1b;color:#f2a79b}
+.fb{margin-block-start:12px;font-size:15px;line-height:1.9;min-block-size:1.5em}.fb .src,.quote .src{color:var(--lapis);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.slots{min-block-size:84px;display:flex;flex-wrap:wrap;gap:8px;padding:10px;border:2px dashed var(--line);border-radius:16px;margin-block-end:14px;align-content:flex-start}
+.slots .ph{color:var(--ink2);font-size:14px;align-self:center;margin-inline:auto}.slots.g{border-color:#2f8a46;border-style:solid}.slots.r{border-color:var(--danger);border-style:solid}
+.pool{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--lapis);color:var(--lapis);background:var(--lapis-soft);border-radius:12px;padding:8px 13px;font-weight:700;font-size:calc(var(--fs)*.95);line-height:1.8}
+.chip.in{background:var(--lapis);color:var(--lapis-ink)}.chip.gone{visibility:hidden}
+.hd{line-height:2.4}.mk{display:inline-block;block-size:1.15em;vertical-align:middle;background:var(--line);border-radius:6px;margin-inline:2px}
+.btnrow.col{flex-direction:column}.btnrow.col .btn{inline-size:100%;block-size:50px;display:flex;align-items:center;justify-content:center}
+.mt2{display:grid;grid-template-columns:1fr 1.5fr;gap:10px}.mt2 .col{display:grid;gap:8px;align-content:start}
+.mc{border:1.5px solid var(--line);background:var(--paper);border-radius:12px;padding:9px 10px;font-size:14.5px;line-height:1.75;text-align:start;font-weight:600}
+.mc.d{font-weight:500;font-size:13.5px}.mc.sel{border-color:var(--lapis);background:var(--lapis-soft)}.mc.done{background:#d9f0dc;border-color:#2f8a46;color:#1c5a2a;opacity:.85}
+:root[data-theme="dark"] .mc.done{background:#1d3a24;color:#9ee6ae}
+.shake{animation:shk .36s}@keyframes shk{25%{transform:translateX(5px)}75%{transform:translateX(-5px)}}
+.quote{background:var(--gold-soft);border-radius:14px;padding:6px 14px 10px;margin-block-end:12px}.quote p{margin:.5em 0;line-height:2}.quote small{font-size:13px}
+.done{text-align:center;padding:28px 8px}.done h2{margin:6px 0}.done p{color:var(--ink2);line-height:1.9;margin:0 0 18px}
+.star.big{inline-size:92px;block-size:92px;font-size:28px;margin:0 auto 10px}
+.rush .tb{block-size:8px;background:var(--line);border-radius:4px;overflow:hidden;margin-block-end:8px}.rush .tb i{display:block;block-size:100%;background:var(--gold)}
+.rs{display:flex;justify-content:space-between;margin-block-end:10px;font-size:15px;color:var(--ink2)}.rs b{color:var(--gold-ink)}
+@media (prefers-reduced-motion:reduce){.shake{animation:none}.sp i,.rush .tb i{transition:none!important}}
 </style>
 </head>
 <body>
@@ -307,7 +398,7 @@ const ICON = {
 
 /* ───────── ذخیره‌سازی (localStorage امن) ───────── */
 const KEY = 'resaleh.v1';
-const defaults = { theme: 'auto', font: 'sans', fs: 19, lh: 2.05, visited: {}, pos: {}, last: null, sbm: {}, pbm: {}, hint: false, groups: {} };
+const defaults = { theme: 'auto', font: 'sans', fs: 19, lh: 2.05, visited: {}, pos: {}, last: null, sbm: {}, pbm: {}, hint: false, groups: {}, profile: null, level: 2, read: {}, days: {}, stars: 0, badges: {}, lb: {}, best: {}, words: 0, correct: 0, secDay: {}, skipAge: false };
 let store = { ...defaults };
 try { store = { ...defaults, ...JSON.parse(localStorage.getItem(KEY) || '{}') }; } catch (e) {}
 let saveT = 0;
@@ -406,7 +497,7 @@ function snippet(text, Q) {
 
 /* ───────── مسیریابی ───────── */
 const app = $('#app');
-const homeState = { tab: 'lessons', q: '', scroll: 0 };
+const homeState = { tab: store.profile ? 'today' : 'lessons', q: '', scroll: 0 };
 let current = null; // نمای فعلی
 
 function parse() {
@@ -421,9 +512,17 @@ function route() {
   if (current === 'home') homeState.scroll = scrollY;
   window.removeEventListener('scroll', onReadScroll);
   window.removeEventListener('scroll', onHomeScroll);
+  stopDwell(); if (rushStop) { rushStop(); rushStop = null; }
   $('#prog').hidden = true;
   if (r.view === 's' && BY[r.id]) { current = 's'; renderReader(r); }
-  else { current = 'home'; if (r.view === 'bm') { homeState.tab = 'bm'; homeState.q = ''; } renderHome(); }
+  else if (r.view === 'play' && store.profile && PLAY[r.id]) { current = 'play'; renderPlay(r); }
+  else {
+    current = 'home';
+    if (r.view === 'bm' || r.view === 'today' || r.view === 'lessons') { homeState.tab = r.view; homeState.q = ''; }
+    if (!store.profile && homeState.tab === 'today' && store.skipAge) homeState.tab = 'lessons';
+    renderHome();
+    if (!store.profile && !store.skipAge) setTimeout(() => { if (current === 'home' && !sheet.classList.contains('on')) openOnboard(); }, 350);
+  }
 }
 
 /* ───────── خانه ───────── */
@@ -446,6 +545,7 @@ function renderHome() {
       <button class="clear ${homeState.q ? 'on' : ''}" id="qc" aria-label="پاک کردن">${ICON.close}</button>
     </label>
     <div class="tabs" role="tablist">
+      <button class="tab" role="tab" data-tab="today" aria-selected="${homeState.tab === 'today'}">امروز</button>
       <button class="tab" role="tab" data-tab="lessons" aria-selected="${homeState.tab === 'lessons'}">درس‌ها</button>
       <button class="tab" role="tab" data-tab="bm" aria-selected="${homeState.tab === 'bm'}">نشانک‌ها${nbm ? `<span class="cnt">${fa(nbm)}</span>` : ''}</button>
     </div></div></div>
@@ -463,7 +563,7 @@ function renderHome() {
     homeState.tab = b.dataset.tab;
     $$('.tab').forEach(x => x.setAttribute('aria-selected', x === b));
     homeState.q = ''; q.value = ''; $('#qc').classList.remove('on');
-    history.replaceState(null, '', homeState.tab === 'bm' ? '#/bm' : '#/');
+    history.replaceState(null, '', '#/' + homeState.tab);
     renderMain();
   });
   window.addEventListener('scroll', onHomeScroll, { passive: true });
@@ -476,6 +576,7 @@ function renderMain() {
   const m = $('#main'); if (!m) return;
   if (homeState.q.trim()) return renderResults(m);
   if (homeState.tab === 'bm') return renderBookmarks(m);
+  if (homeState.tab === 'today') return renderToday(m);
   renderLessons(m);
 }
 
@@ -580,6 +681,7 @@ function renderReader(r) {
   R_ = { s, last: 0, hideT: 0, sel: null };
   store.last = s.id; save();
   $('#bAa').onclick = openSettings;
+  startDwell(s);
   $('#bOut').onclick = openOutline;
   $('#bBm').onclick = e => {
     const on = !store.sbm[s.id];
@@ -699,14 +801,16 @@ function hideAct() {
 
 /* ───────── برگه‌ها ───────── */
 const sheet = $('#sheet'), backd = $('#back');
-function openSheet(html) {
+let lock = false;
+function openSheet(html, locked) {
+  lock = !!locked;
   $('#sheetIn').innerHTML = html;
   sheet.classList.add('on'); backd.classList.add('on'); sheet.setAttribute('aria-hidden', 'false');
   sheet.scrollTop = 0;
 }
-function closeSheet() { sheet.classList.remove('on'); backd.classList.remove('on'); sheet.setAttribute('aria-hidden', 'true'); }
-backd.onclick = closeSheet;
-addEventListener('keydown', e => { if (e.key === 'Escape') { closeSheet(); hideAct(); } });
+function closeSheet() { lock = false; sheet.classList.remove('on'); backd.classList.remove('on'); sheet.setAttribute('aria-hidden', 'true'); }
+backd.onclick = () => { if (!lock) closeSheet(); };
+addEventListener('keydown', e => { if (e.key === 'Escape') { if (!lock) closeSheet(); hideAct(); } });
 
 function openOutline() {
   const hs = $$('.blk h3', $('#doc'));
@@ -729,6 +833,9 @@ function openSettings() {
     <input type="range" id="rFs" min="15" max="28" step="1" value="${store.fs}" aria-label="اندازه‌ی متن"></div>
   <div class="set"><div class="lb">فاصله‌ی خطوط <span class="val" id="vLh">${fa(store.lh.toFixed(2).replace(/0$/, ''))}</span></div>
     <input type="range" id="rLh" min="1.6" max="2.5" step="0.05" value="${store.lh}" aria-label="فاصله‌ی خطوط"></div>
+  <div class="set"><div class="lb">گروه سنی (نوع فعالیت‌ها)</div>${seg('profile', [['child', 'کودک'], ['teen', 'نوجوان'], ['youth', 'جوان'], ['adult', 'بزرگسال']])}</div>
+  <div class="set"><div class="lb">مطالعهٔ روزانه (واژه و جمله)</div>${seg('level', [[1, 'سبک'], [2, 'متوسط'], [3, 'جدی']])}
+    <div class="btnrow" style="margin-top:8px"><button class="btn" id="bRst">پاک‌کردن پیشرفت بازی</button></div></div>
   <div class="set"><div class="lb">پوسته</div>${seg('theme', [['auto', 'خودکار'], ['light', 'روشن'], ['dark', 'شب'], ['paper', 'کاغذی']])}</div>
   <div class="set"><div class="lb">قلم</div>${seg('font', [['sans', 'ساده'], ['book', 'کتابی (نسخ)']])}
     <div class="sample" id="sample">اگر کسی بر اثر نیاموختن احکام، مرتکب حرام یا ترک واجب شود، گناهکار است.</div></div>
@@ -741,11 +848,14 @@ function openSettings() {
   ساخته‌شده توسط حسین شیبه · <a href="https://sheibah.ir" target="_blank" rel="noopener" style="color:var(--lapis);font-weight:700">sheibah.ir</a></p>`);
   $$('.seg').forEach(sg => sg.onclick = e => {
     const b = e.target.closest('button'); if (!b) return;
-    store[sg.dataset.k] = b.dataset.v; save(); applySettings();
+    const k = sg.dataset.k; store[k] = k === 'level' ? +b.dataset.v : b.dataset.v;
+    if (k === 'profile') { store.skipAge = false; if (store.profile === 'child' && store.fs < 21) store.fs = 22; }
+    save(); applySettings();
     $$('button', sg).forEach(x => x.setAttribute('aria-pressed', x === b));
   });
   $('#rFs').oninput = e => { store.fs = +e.target.value; $('#vFs').textContent = fa(store.fs); applySettings(); save(); };
   $('#rLh').oninput = e => { store.lh = +e.target.value; $('#vLh').textContent = fa(store.lh.toFixed(2).replace(/0$/, '')); applySettings(); save(); };
+  $('#bRst').onclick = e => { if (e.target.dataset.sure) { resetGame(); closeSheet(); route(); toast('پیشرفت بازی پاک شد'); } else { e.target.dataset.sure = 1; e.target.textContent = 'مطمئنید؟ دوباره بزنید'; } };
   $('#bExp').onclick = () => {
     const blob = new Blob([JSON.stringify({ app: 'resaleh', v: 1, store }, null, 1)], { type: 'application/json' });
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'resaleh-backup.json'; a.click();
@@ -775,6 +885,796 @@ let toastT = 0;
 function toast(msg, ms = 2200) {
   const t = $('#toast'); $('span', t).textContent = msg; t.classList.add('on');
   clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), ms);
+}
+
+
+/* ═════════════════════════════════════════════════════════════
+   بازی و فعالیت: پروفایل سنی، سهمیه‌ی روزانه بر پایه‌ی واژه و جمله
+   ═════════════════════════════════════════════════════════════ */
+const AGES = {
+  child: { n: 'کودک', r: 'تا ۱۱ سال', W: 60, Q: 3, T: 35, U: 4, minW: 5, maxW: 15, opts: 3, steps: [0, .3, .6],
+    list: ['read', 'cloze', 'order', 'hide', 'daily'] },
+  teen: { n: 'نوجوان', r: '۱۲ تا ۱۷ سال', W: 150, Q: 5, T: 80, U: 8, minW: 6, maxW: 24, opts: 4, steps: [0, .3, .6, 1],
+    list: ['read', 'cloze', 'order', 'match', 'cards', 'rush', 'hide', 'daily'] },
+  youth: { n: 'جوان', r: '۱۸ تا ۳۵ سال', W: 300, Q: 8, T: 150, U: 14, minW: 7, maxW: 32, opts: 4, steps: [0, .3, .6, 1],
+    list: ['read', 'cloze', 'match', 'cards', 'rush', 'hide', 'review', 'daily'] },
+  adult: { n: 'بزرگسال', r: '۳۶ سال به بالا', W: 400, Q: 6, T: 200, U: 18, minW: 7, maxW: 42, opts: 4, steps: [0, .3, .6, 1],
+    list: ['read', 'cloze', 'match', 'cards', 'review', 'hide', 'daily'] },
+};
+const LEVEL = { 1: { n: 'سبک', m: .6 }, 2: { n: 'متوسط', m: 1 }, 3: { n: 'جدی', m: 1.6 } };
+const ACT = {
+  read: { t: 'پارهٔ امروز', d: 'بخش کوتاهی از درس‌ها را بخوانید', i: 'book' },
+  cloze: { t: 'جای خالی', d: 'واژهٔ درست را برای جای خالی انتخاب کنید', i: 'blank' },
+  order: { t: 'جمله‌چین', d: 'تکه‌های جمله را به ترتیب بچینید', i: 'shuffle' },
+  hide: { t: 'حفظ‌یار', d: 'جمله را کم‌کم پنهان کنید و از حفظ بگویید', i: 'eyeoff' },
+  match: { t: 'تعریف‌یاب', d: 'هر اصطلاح را به معنایش وصل کنید', i: 'link' },
+  cards: { t: 'کارت پرسش', d: 'به پرسش‌های پایان درس جواب دهید', i: 'cards' },
+  rush: { t: 'مسابقهٔ سریع', d: 'شصت ثانیه جای خالی پر کنید', i: 'bolt' },
+  review: { t: 'مرور امروز', d: 'مواردی که باید دوباره ببینید', i: 'repeat' },
+  daily: { t: 'مسئلهٔ امروز', d: 'یک مسئله از متن برای هر روز', i: 'sun' },
+};
+Object.assign(ICON, {
+  book: '<svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 016.5 3H20v16H6.5A2.5 2.5 0 004 21.5zM20 19v2H6.5M8 7.5h8"/></svg>',
+  blank: '<svg viewBox="0 0 24 24"><path d="M3 8h18M3 16h6M15 16h6M10.5 19h3"/></svg>',
+  shuffle: '<svg viewBox="0 0 24 24"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>',
+  eyeoff: '<svg viewBox="0 0 24 24"><path d="M3 3l18 18M10.6 10.6a2 2 0 002.8 2.8M9.9 5.1A9.8 9.8 0 0112 5c5 0 8.5 4.5 9.5 7a14 14 0 01-2.6 3.8M6.1 6.1A14 14 0 002.5 12C3.5 14.5 7 19 12 19a9.7 9.7 0 004-.9"/></svg>',
+  link: '<svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></svg>',
+  cards: '<svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="2.5"/><path d="M7 4h10"/></svg>',
+  bolt: '<svg viewBox="0 0 24 24"><path d="M13 2L5 14h6l-1 8 8-12h-6z"/></svg>',
+  repeat: '<svg viewBox="0 0 24 24"><path d="M17 2l3 3-3 3M3 11V9a4 4 0 014-4h13M7 22l-3-3 3-3M21 13v2a4 4 0 01-4 4H4"/></svg>',
+  sun: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+  star: '<svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg>',
+  check: '<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+});
+
+/* مسیر مطالعه‌ی هر گروه سنی (فقط برای پاره‌های روزانه و فعالیت‌ها؛ فهرست کامل درس‌ها همیشه در دسترس است) */
+const KID_IDS = ['l13', 'l15', 'l30', 'l33', 'l34', 'l35', 'l36', 'l37', 'l38', 'l39', 'l40', 'l42', 'l43', 'l45', 'l47', 'l58', 'l59', 'l65'];
+const TEEN_B = ['m9', 'm10', 'm11', 'm12', 'm14', 'm33', 'm35', 'm36', 'm42', 'm50'];
+const TEEN_NO = ['l22', 'l23', 'l24'];
+const KID_BAD = new Set('خون منی جنابت جنب حیض نفاس استحاضه عورت میت مرده مردار شراب مسکر قمار زنا سگ خوک نامحرم'.split(' '));
+function eligibleIds() {
+  if (store.profile === 'child') return KID_IDS;
+  if (store.profile === 'teen') return SECS.filter(s => (s.part === 'A' && !TEEN_NO.includes(s.id)) || TEEN_B.includes(s.id)).map(s => s.id);
+  return SECS.map(s => s.id);
+}
+
+/* ── زمان و روزها ── */
+const keyOf = n => new Date(n * 864e5).toISOString().slice(0, 10);
+const dayNum = k => Math.floor(Date.parse(k + 'T00:00:00Z') / 864e5);
+const todayKey = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+function D() {
+  const k = todayKey();
+  if (!store.days[k]) {
+    store.days[k] = { w: 0, s: 0, a: 0, st: 0, goal: 0 };
+    const keep = dayNum(k) - 120;
+    Object.keys(store.days).forEach(x => { if (dayNum(x) < keep) delete store.days[x]; });
+  }
+  return store.days[k];
+}
+const prof = () => AGES[store.profile] || null;
+const goalW = () => Math.max(10, Math.round(prof().W * LEVEL[store.level].m / 5) * 5);
+const goalS = () => Math.max(2, Math.round(goalW() / 11));
+const goalA = () => Math.max(2, Math.round(prof().Q * LEVEL[store.level].m));
+const readProg = () => { const d = D(); return Math.min(1, Math.max(d.w / goalW(), d.s / goalS())); };
+
+function streak() {
+  const keys = Object.keys(store.days); if (!keys.length) return 0;
+  const first = Math.min(...keys.map(dayNum));
+  let k = dayNum(todayKey()), n = 0, lastMiss = null;
+  if (!(store.days[keyOf(k)] || {}).goal) k--;
+  for (let i = 0; i < 400 && k >= first; i++, k--) {
+    if ((store.days[keyOf(k)] || {}).goal) n++;
+    else if (lastMiss === null || lastMiss - k >= 7) lastMiss = k; // یک روز استراحت در هر هفته
+    else break;
+  }
+  return n;
+}
+const levelOf = st => Math.floor(Math.sqrt(st / 25)) + 1;
+
+function award(n) { if (n > 0) { store.stars += n; D().st += n; } }
+
+/* ── واحدهای متن: جمله / بند فهرست / سرفصل ── */
+const wcount = t => (t.trim().match(/\S+/g) || []).length;
+function splitSentences(t) {
+  t = t.replace(/\s+/g, ' ').trim(); if (!t) return [];
+  const raw = t.match(/[^.!؟?؛]+[.!؟?؛]*(?:\s+|$)/g) || [t];
+  const out = [];
+  raw.forEach(x => {
+    x = x.trim(); if (!x) return;
+    if (out.length && wcount(x) < 3) out[out.length - 1] += ' ' + x; else out.push(x);
+  });
+  return out;
+}
+const tpl = document.createElement('template');
+function getUnits(sec) {
+  if (sec._u) return sec._u;
+  const U = [];
+  const push = (b, k, t) => { t = t.replace(/\s+/g, ' ').trim(); if (t) U.push({ b, k, t, w: k === 'h' ? 0 : wcount(t) }); };
+  sec.blocks.forEach((html, b) => {
+    if (/^<(div class="(fns|tbl)"|section)/.test(html)) return;
+    tpl.innerHTML = html;
+    const root = tpl.content.firstElementChild; if (!root) return;
+    const walk = el => {
+      if (el.matches('h3')) push(b, 'h', el.textContent);
+      else if (el.matches('p')) splitSentences(el.textContent).forEach(s => push(b, 'p', s));
+      else if (el.matches('ul')) [...el.children].forEach(li => push(b, 'li', li.textContent));
+      else if (el.matches('.ol')) [...el.children].forEach(ni => push(b, 'li', ni.lastElementChild ? ni.lastElementChild.textContent : ni.textContent));
+      else if (el.matches('aside')) [...el.children].forEach(c => { if (!c.matches('.nl')) walk(c); });
+    };
+    walk(root);
+  });
+  sec._u = U;
+  sec._tw = U.reduce((a, u) => a + u.w, 0);
+  return U;
+}
+let UREADY = false;
+function ensureAllUnits() {
+  if (UREADY) return;
+  SECS.forEach(getUnits);
+  UREADY = true;
+}
+function readBits(sec) {
+  const U = getUnits(sec); let s = store.read[sec.id];
+  if (!s || s.length !== U.length) s = store.read[sec.id] = '0'.repeat(U.length);
+  return s;
+}
+/* واحدهای idx را «خوانده» ثبت می‌کند و فقط واژه‌ها و جمله‌های تازه را به آمار امروز می‌افزاید */
+function markRead(sec, idxs) {
+  const U = getUnits(sec); const a = readBits(sec).split('');
+  let w = 0, s = 0;
+  idxs.forEach(i => { if (a[i] !== '1') { a[i] = '1'; if (U[i].k !== 'h') { w += U[i].w; s++; } } });
+  store.read[sec.id] = a.join('');
+  store.secDay[sec.id] = dayNum(todayKey());
+  if (w || s) creditDay(w, s);
+  else save();
+  return { w, s };
+}
+function creditDay(w, s) {
+  const d = D(); const wasMet = !!d.goal;
+  d.w += w; d.s += s;
+  const b0 = Math.floor(store.words / 10); store.words += w;
+  award(Math.floor(store.words / 10) - b0);
+  let bonus = 0;
+  if (prof() && !wasMet && readProg() >= 1) {
+    d.goal = 1; bonus = 10; award(10);
+    const st = streak(); if (st === 7 || st === 30) award(st === 7 ? 20 : 60);
+  }
+  const nb = checkBadges();
+  if (bonus) toast('هدف امروز انجام شد؛ ۱۰ ستاره', 3500);
+  save();
+  return { bonus, newBadges: nb };
+}
+function secCover(sec) {
+  const U = getUnits(sec), s = store.read[sec.id];
+  if (!s || s.length !== U.length || !sec._tw) return 0;
+  let r = 0; for (let i = 0; i < U.length; i++) if (s[i] === '1') r += U[i].w;
+  return r / sec._tw;
+}
+
+/* ── نشان‌ها ── */
+const BADGES = [
+  { id: 'first', n: 'نخستین پاره', d: 'اولین پارهٔ مطالعه را خواندید', t: () => store.words > 0 },
+  { id: 'w1k', n: 'هزار واژه', d: '۱٬۰۰۰ واژه خواندید', t: () => store.words >= 1000 },
+  { id: 'w5k', n: 'پنج هزار واژه', d: '۵٬۰۰۰ واژه خواندید', t: () => store.words >= 5000 },
+  { id: 'w20k', n: 'بیست هزار واژه', d: '۲۰٬۰۰۰ واژه خواندید', t: () => store.words >= 20000 },
+  { id: 's3', n: 'سه روز پیاپی', d: 'سه روز پشت‌سرهم به هدف رسیدید', t: () => streak() >= 3 },
+  { id: 's7', n: 'یک هفته', d: 'هفت روز پیاپی', t: () => streak() >= 7 },
+  { id: 's30', n: 'یک ماه', d: 'سی روز پیاپی', t: () => streak() >= 30 },
+  { id: 'a50', n: 'پنجاه پاسخ درست', d: '۵۰ پاسخ درست در فعالیت‌ها', t: () => store.correct >= 50 },
+  { id: 'a300', n: 'سیصد پاسخ درست', d: '۳۰۰ پاسخ درست در فعالیت‌ها', t: () => store.correct >= 300 },
+  { id: 'rush', n: 'سرعت‌گیر', d: 'در مسابقهٔ سریع ۱۰ پاسخ درست', t: () => (store.best.rush || 0) >= 10 },
+];
+function checkBadges() {
+  const out = [];
+  BADGES.forEach(b => { if (!store.badges[b.id] && b.t()) { store.badges[b.id] = todayKey(); out.push(b.n); } });
+  if (UREADY) {
+    GROUPS.forEach(g => {
+      const id = 'g:' + g.name;
+      if (!store.badges[id] && g.items.every(s => secCover(s) >= .95)) { store.badges[id] = todayKey(); out.push('تکمیل «' + g.name + '»'); }
+    });
+  }
+  out.forEach(n => setTimeout(() => toast('نشان تازه: ' + n, 3200), 400));
+  return out;
+}
+
+/* ── مسیر مطالعه: پارهٔ بعدی بر پایهٔ تعداد واژه و جمله ── */
+function nextPortion() {
+  const p = prof(); if (!p) return null;
+  for (const id of eligibleIds()) {
+    const sec = BY[id], U = getUnits(sec), rd = store.read[id] && store.read[id].length === U.length ? store.read[id] : '';
+    let i = 0; while (i < U.length && rd[i] === '1') i++;
+    if (i >= U.length) continue;
+    const out = []; let w = 0, n = 0;
+    for (let j = i; j < U.length; j++) {
+      const u = U[j];
+      if (rd[j] === '1' && out.length) break;
+      if (out.length && u.k !== 'h') {
+        if (w >= p.T || n >= p.U) break;
+        if (w >= p.T * .5 && w + u.w > p.T * 1.5) break;
+      }
+      out.push(j); if (u.k !== 'h') { w += u.w; n++; }
+    }
+    while (out.length && U[out[out.length - 1]].k === 'h') out.pop();
+    if (!out.length) { markRead(sec, [i]); continue; } // سرفصلِ تنها در انتهای درس
+    return { sec, U, idx: out, w, n };
+  }
+  return null;
+}
+
+/* ── واژگان و ابزارهای ساخت پرسش ── */
+const STOP = new Set(('است باید برای اگر این آن که یا با از را می‌شود شود شوند هم نیز بر تا در به ولی اما بود باشد باشند کند کنند کرد دیگر همه هر چه چنانچه بنابراین ' +
+  'نمی‌شود نمی‌تواند می‌تواند نیست نباید بیشتر کمتر یک دو سه چند آنها آن‌ها خود او وی ما شما همین همان بعد قبل پس پیش مثل مانند مگر بلکه زیرا چون چنین چنان کسی چیزی ' +
+  'هیچ فقط تنها بدون همراه حتی هنگام وقتی هنگامی صورت صورتی حالت حال مورد موارد مثلاً یعنی البته بلکه نیز همچنین اینکه آنکه کسیکه چیزیکه صورتیکه ' +
+  'می‌کند نمی‌کند می‌توان نمی‌توان می‌شود می‌باشد دارد ندارد دارند هستند نیستند اند بوده شده شد شدند خواهد نخواهد').split(' '));
+const TRIM = /^[\s«»"'“”‘’(\[{،؛:.!؟?…\-–—]+|[\s«»"'“”‘’)\]}،؛:.!؟?…\-–—]+$/g;
+const clean = t => t.replace(TRIM, '');
+const plen = t => t.replace(/‌/g, '').length;
+const PERSIAN_ONLY = /^[؀-ۿ‌]+$/;
+let VOC = null, VOC_LEN = null;
+function buildVoc() {
+  if (VOC) return;
+  VOC = new Map();
+  ensureAllUnits();
+  SECS.forEach(s => getUnits(s).forEach(u => { if (u.k !== 'h') u.t.split(/\s+/).forEach(x => { x = clean(x); if (x) VOC.set(x, (VOC.get(x) || 0) + 1); }); }));
+  VOC_LEN = {};
+  VOC.forEach((f, w) => {
+    if (f < 4 || STOP.has(w) || !PERSIAN_ONLY.test(w) || /[۰-۹٠-٩]/.test(w)) return;
+    const L = plen(w); if (L < 3 || L > 16) return;
+    (VOC_LEN[L] || (VOC_LEN[L] = [])).push(w);
+  });
+}
+const rnd = n => Math.floor(Math.random() * n);
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = rnd(i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const sample = (a, n) => shuffle(a).slice(0, n);
+function seeded(seed) {
+  let h = 2166136261; for (let i = 0; i < seed.length; i++) { h ^= seed.charCodeAt(i); h = Math.imul(h, 16777619); }
+  return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; };
+}
+
+/* واحد مناسب فعالیت؟ (بدون متن عربی، بدون واژه‌ی نامناسب برای کودک) */
+function goodUnit(u) {
+  const p = prof(); if (!p || u.k === 'h') return false;
+  if (u.w < p.minW || u.w > p.maxW) return false;
+  if (/[A-Za-zً-ٟ]/.test(u.t) || /[ةكي]/.test(u.t)) return false;
+  if (/[:：]$/.test(u.t)) return false;
+  if (store.profile === 'child' && u.t.split(/\s+/).some(x => KID_BAD.has(clean(x)))) return false;
+  return true;
+}
+/* فهرست واحدهای خوانده‌شده‌ی مناسب */
+function readPool(onlyIdx) {
+  const out = [];
+  eligibleIds().forEach(id => {
+    const sec = BY[id], rd = store.read[id]; if (!rd) return;
+    const U = getUnits(sec); if (rd.length !== U.length) return;
+    for (let i = 0; i < U.length; i++) {
+      if (rd[i] !== '1' || !goodUnit(U[i])) continue;
+      if (onlyIdx && !(onlyIdx.sec === id && onlyIdx.idx.includes(i))) continue;
+      out.push({ sec, i, u: U[i] });
+    }
+  });
+  return out;
+}
+function pickWeighted(list, n) {
+  const t = dayNum(todayKey());
+  const w = list.map(x => ((t - (store.secDay[x.sec.id] || 0)) <= 3 ? 3 : 1) * Math.random());
+  return list.map((x, i) => [w[i], x]).sort((a, b) => b[0] - a[0]).slice(0, n).map(x => x[1]);
+}
+
+/* ── لایتنر: دفعات مرور ── */
+const LB = [0, 1, 3, 7, 14, 30];
+function leit(key, ok) {
+  const t = dayNum(todayKey()); let b = (store.lb[key] || [0])[0];
+  b = ok ? Math.min(5, b + 1) : 0; store.lb[key] = [b, t + LB[b]];
+}
+function dueKeys() { const t = dayNum(todayKey()); return Object.keys(store.lb).filter(k => store.lb[k][1] <= t); }
+
+function answered(it, ok, mult) {
+  const d = D();
+  if (ok) {
+    store.correct++; d.a++;
+    if (d.a <= 30) award(mult || 2);
+    if (!d.ag && d.a >= goalA()) { d.ag = 1; award(5); toast('هدف فعالیت امروز انجام شد؛ ۵ ستاره', 3200); }
+  }
+  if (it.key) leit(it.key, ok);
+  checkBadges(); save();
+}
+
+/* ── ساخت پرسش‌ها ── */
+function makeCloze(e) {
+  buildVoc(); const p = prof();
+  const ws = e.u.t.split(/\s+/), cnt = {}, cand = [];
+  ws.forEach(x => { const c = clean(x); cnt[c] = (cnt[c] || 0) + 1; });
+  ws.forEach((x, i) => {
+    const c = clean(x); if (!c || STOP.has(c) || !PERSIAN_ONLY.test(c) || cnt[c] > 1) return;
+    const L = plen(c); if (L < 3 || L > 16 || (VOC.get(c) || 0) < 4) return;
+    cand.push(i);
+  });
+  if (!cand.length) return null;
+  cand.sort((a, b) => plen(clean(ws[b])) - plen(clean(ws[a])) + (rnd(5) - 2));
+  const i = cand[0], x = ws[i], ans = clean(x), L = plen(ans);
+  let pool = [];
+  [0, 1, -1, 2, -2].forEach(d => { (VOC_LEN[L + d] || []).forEach(w => { if (w !== ans && !cnt[w]) pool.push(w); }); });
+  pool = pool.map(w => [(w[0] === ans[0] ? 1 : 0) + (w.slice(-1) === ans.slice(-1) ? 1 : 0) + Math.random() * 1.5, w]).sort((a, b) => b[0] - a[0]).slice(0, 14).map(x => x[1]);
+  const ds = sample(pool, p.opts - 1); if (ds.length < p.opts - 1) return null;
+  const at = x.indexOf(ans);
+  return { type: 'cloze', key: e.sec.id + ':' + e.i, e, ws, i, pre: x.slice(0, at), suf: x.slice(at + ans.length), ans, opts: shuffle([ans, ...ds]) };
+}
+function makeOrder(e) {
+  const ws = e.u.t.split(/\s+/); if (ws.length < 4) return null;
+  const n = ws.length, k = Math.max(3, store.profile === 'child' ? Math.min(4, Math.ceil(n / 3)) : Math.min(6, Math.ceil(n / 2.5)));
+  const base = Math.floor(n / k); let ex = n % k, at = 0; const ch = [];
+  for (let j = 0; j < k; j++) { const sz = base + (j < ex ? 1 : 0); ch.push(ws.slice(at, at + sz).join(' ')); at += sz; }
+  let sh = shuffle(ch), tries = 0; while (sh.join('|') === ch.join('|') && tries++ < 6) sh = shuffle(ch);
+  return { type: 'order', key: e.sec.id + ':' + e.i, e, ch, sh };
+}
+function makeHide(e) {
+  const ws = e.u.t.split(/\s+/); const r = seeded(e.sec.id + e.i + todayKey());
+  const ord = ws.map((_, i) => [r(), i]).sort((a, b) => a[0] - b[0]).map(x => x[1]);
+  return { type: 'hide', key: e.sec.id + ':' + e.i, e, ws, ord };
+}
+let PAIRS = null;
+function buildPairs() {
+  if (PAIRS) return PAIRS; PAIRS = [];
+  const re = /^[«"]?([^،:.؛]{2,40}?)[»"]?\s+(?:یعنی|عبارت است از)\s+(.{10,170}?)[.؛]?$/;
+  eligibleIds().forEach(id => {
+    getUnits(BY[id]).forEach((u, i) => {
+      if (u.k === 'h' || /[A-Za-zً-ٟ]/.test(u.t)) return;
+      const m = u.t.match(re); if (!m) return;
+      const t = m[1].trim(), d = m[2].trim();
+      if (wcount(t) > 5 || wcount(d) > 22 || wcount(d) < 3) return;
+      if (store.profile === 'child' && u.t.split(/\s+/).some(x => KID_BAD.has(clean(x)))) return;
+      PAIRS.push({ id, i, t, d });
+    });
+  });
+  return PAIRS;
+}
+function pairPool() { return buildPairs().filter(p => secCover(BY[p.id]) > 0); }
+function makeMatch() {
+  const pool = pairPool(), seen = {}, pick = [];
+  shuffle(pool).forEach(p => { if (pick.length < 4 && !seen[p.t]) { seen[p.t] = 1; pick.push(p); } });
+  return pick.length >= 3 ? { type: 'match', pairs: pick } : null;
+}
+function getQs(sec) {
+  if (sec._q) return sec._q;
+  const out = [];
+  sec.blocks.forEach((html, b) => {
+    if (!html.startsWith('<section class="ex">')) return;
+    tpl.innerHTML = html;
+    [...tpl.content.querySelectorAll('.ni')].forEach(ni => {
+      const d = ni.lastElementChild || ni, t = d.textContent.replace(/\s+/g, ' ').trim();
+      if (wcount(t) >= 3 && !/[A-Za-zً-ٟ]/.test(t)) out.push({ q: t, qi: out.length, b });
+    });
+  });
+  return (sec._q = out);
+}
+const st4 = w => w.replace(/‌/g, '').slice(0, 4);
+function findAnswer(sec, q) {
+  const stems = [...new Set(q.split(/\s+/).map(clean).filter(w => w && !STOP.has(w) && plen(w) >= 3 && PERSIAN_ONLY.test(w)).map(st4))];
+  if (stems.length < 2) return null;
+  const U = getUnits(sec), sc = [];
+  U.forEach((u, i) => {
+    if (u.k === 'h') return;
+    const ws = new Set(u.t.split(/\s+/).map(w => st4(clean(w))));
+    sc.push([stems.filter(s => ws.has(s)).length, i]);
+  });
+  sc.sort((a, b) => b[0] - a[0] || a[1] - b[1]);
+  const top = sc[0]; if (!top || top[0] < 2 || top[0] < stems.length * .4) return null;
+  const res = sc.filter(x => x[0] === top[0]).slice(0, 2).map(x => x[1]).sort((a, b) => a - b);
+  return res;
+}
+function makeCard(sec, q) {
+  const a = findAnswer(sec, q.q); if (!a) return null;
+  return { type: 'card', key: 'q:' + sec.id + ':' + q.qi, sec, q, a };
+}
+function cardPool() {
+  const out = [];
+  eligibleIds().forEach(id => {
+    const sec = BY[id]; if (secCover(sec) < .3) return;
+    getQs(sec).forEach(q => {
+      if (store.profile === 'child' && q.q.split(/\s+/).some(x => KID_BAD.has(clean(x)))) return;
+      out.push({ sec, q });
+    });
+  });
+  return out;
+}
+function entryFromKey(k) {
+  if (k.startsWith('q:')) {
+    const [, id, qi] = k.split(':'), sec = BY[id]; if (!sec || !eligibleIds().includes(id)) return null;
+    const q = getQs(sec)[+qi]; return q ? makeCard(sec, q) : null;
+  }
+  const [id, i] = k.split(':'), sec = BY[id]; if (!sec || !eligibleIds().includes(id)) return null;
+  const u = getUnits(sec)[+i]; if (!u || !goodUnit(u)) return null;
+  const e = { sec, i: +i, u };
+  return (Math.random() < .5 ? makeCloze(e) : null) || makeOrder(e) || makeCloze(e);
+}
+function buildItems(kind, n, only) {
+  buildVoc();
+  if (kind === 'cards') {
+    const out = []; pickWeighted(cardPool(), 40).forEach(x => { if (out.length < n) { const c = makeCard(x.sec, x.q); if (c) out.push(c); } });
+    return out;
+  }
+  if (kind === 'match') { const out = []; for (let j = 0; j < 2; j++) { const m = makeMatch(); if (m) out.push(m); } return out; }
+  if (kind === 'review') { const out = []; shuffle(dueKeys()).forEach(k => { if (out.length < 8) { const it = entryFromKey(k); if (it) out.push(it); } }); return out; }
+  const mk = { cloze: makeCloze, order: makeOrder, hide: makeHide }[kind];
+  const out = [];
+  pickWeighted(readPool(only), n * 4).forEach(e => { if (out.length < n) { const it = mk(e); if (it) out.push(it); } });
+  return out;
+}
+const sessN = kind => { const c = store.profile === 'child'; return { cloze: c ? 5 : 8, order: c ? 4 : 6, hide: c ? 3 : 4, cards: 5 }[kind] || 5; };
+
+/* ── نمایش هر نوع پرسش ── */
+const srcLink = (sec, i) => { const u = getUnits(sec)[i]; return `<a class="src" href="#/s/${sec.id}/${u.b}">${esc(sec.title)}</a>`; };
+const RENDER = {
+  cloze(it, ctx) {
+    const { ws, i, pre, suf, ans, opts } = it;
+    const part = a => esc(a.join(' '));
+    ctx.box.innerHTML = `<p class="q">${part(ws.slice(0, i))} <span class="bl" id="bl">${esc(pre)}<i>＿＿＿</i>${esc(suf)}</span> ${part(ws.slice(i + 1))}</p>
+      <div class="opts">${opts.map((o, k) => `<button class="opt" data-k="${k}">${esc(o)}</button>`).join('')}</div><div class="fb" id="fb"></div>`;
+    $$('.opt', ctx.box).forEach(b => b.onclick = () => {
+      if (ctx.done) return;
+      const ok = opts[+b.dataset.k] === ans;
+      $$('.opt', ctx.box).forEach(x => { x.disabled = true; if (opts[+x.dataset.k] === ans) x.classList.add('ok'); });
+      if (!ok) b.classList.add('bad');
+      $('#bl', ctx.box).innerHTML = esc(pre) + '<b>' + esc(ans) + '</b>' + esc(suf);
+      $('#bl', ctx.box).classList.add(ok ? 'g' : 'r');
+      if (!ctx.rush) $('#fb', ctx.box).innerHTML = (ok ? '<b>درست.</b> ' : '<b>پاسخ درست: ' + esc(ans) + '</b> ') + 'از ' + srcLink(it.e.sec, it.e.i);
+      ctx.fin(ok);
+    });
+  },
+  order(it, ctx) {
+    const { ch, sh } = it; let ans = [];
+    const paint = () => {
+      ctx.box.innerHTML = `<p class="hint">تکه‌ها را به ترتیب بزنید تا جمله ساخته شود.</p>
+        <div class="slots ${ctx.done ? 'fin' : ''}">${ans.length ? ans.map((k, j) => `<button class="chip in" data-j="${j}">${esc(sh[k])}</button>`).join('') : '<span class="ph">جمله اینجا ساخته می‌شود</span>'}</div>
+        <div class="pool">${sh.map((t, k) => ans.includes(k) ? `<span class="chip gone">${esc(t)}</span>` : `<button class="chip" data-k="${k}">${esc(t)}</button>`).join('')}</div><div class="fb" id="fb"></div>`;
+      if (ctx.done) return;
+      $$('.pool .chip[data-k]', ctx.box).forEach(b => b.onclick = () => {
+        ans.push(+b.dataset.k); paint();
+        if (ans.length === sh.length) {
+          const ok = ans.map(k => sh[k]).join(' ') === ch.join(' ');
+          $('#fb', ctx.box).innerHTML = ok ? '<b>درست.</b> ' + 'از ' + srcLink(it.e.sec, it.e.i) : '<b>ترتیب درست:</b> ' + esc(ch.join(' '));
+          ctx.fin(ok); $$('.chip', ctx.box).forEach(c => c.disabled = true);
+          $('.slots', ctx.box).classList.add(ok ? 'g' : 'r');
+        }
+      });
+      $$('.slots .chip', ctx.box).forEach(b => b.onclick = () => { ans.splice(+b.dataset.j, 1); paint(); });
+    };
+    paint();
+  },
+  hide(it, ctx) {
+    const steps = prof().steps, last = steps.length - 1; let s = 0; const peek = new Set();
+    const paint = () => {
+      const n = it.ws.length, m = Math.round(steps[s] * n), hid = new Set(it.ord.slice(0, m));
+      ctx.box.innerHTML = `<p class="hint">${s === 0 ? 'جمله را بخوانید، بعد «پنهان‌تر» را بزنید.' : s < last ? 'جمله را با تکیه بر واژه‌های باقی‌مانده بگویید.' : 'همهٔ جمله پنهان است؛ از حفظ بگویید.'}</p>
+        <p class="q hd">${it.ws.map((w, i) => hid.has(i) && !peek.has(i) && !ctx.done ? `<button class="mk" data-i="${i}" style="inline-size:${Math.max(2.4, plen(w) * .6)}em" aria-label="واژهٔ پنهان"></button>` : `<span>${esc(w)}</span>`).join(' ')}</p>
+        <div class="fb" id="fb"></div>
+        ${ctx.done ? '' : `<div class="btnrow">${s < last ? '<button class="btn" id="hMore">پنهان‌تر</button>' : '<button class="btn pri" id="hOk">از حفظ گفتم ✓</button>'}<button class="btn" id="hShow">نمایش جمله</button></div>`}`;
+      if (ctx.done) return;
+      $$('.mk', ctx.box).forEach(b => b.onclick = () => { peek.add(+b.dataset.i); paint(); });
+      $('#hMore')?.addEventListener('click', () => { s++; peek.clear(); paint(); });
+      $('#hOk')?.addEventListener('click', () => { ctx.fin(true); paint(); $('#fb', ctx.box).innerHTML = '<b>آفرین.</b> از ' + srcLink(it.e.sec, it.e.i); });
+      $('#hShow')?.addEventListener('click', () => { ctx.fin(false); paint(); $('#fb', ctx.box).innerHTML = 'از ' + srcLink(it.e.sec, it.e.i); });
+    };
+    paint();
+  },
+  match(it, ctx) {
+    const L = it.pairs.map((p, i) => ({ i, t: p.t })), R = shuffle(it.pairs.map((p, i) => ({ i, d: p.d })));
+    let selL = null, selR = null, mist = 0, got = 0; const first = {};
+    ctx.box.innerHTML = `<p class="hint">یک اصطلاح و معنای آن را پشت‌سرهم بزنید.</p>
+      <div class="mt2"><div class="col">${L.map(x => `<button class="mc" data-s="l" data-i="${x.i}">${esc(x.t)}</button>`).join('')}</div>
+      <div class="col">${R.map(x => `<button class="mc d" data-s="r" data-i="${x.i}">${esc(x.d)}</button>`).join('')}</div></div><div class="fb" id="fb"></div>`;
+    const clr = () => $$('.mc.sel', ctx.box).forEach(x => x.classList.remove('sel'));
+    $$('.mc', ctx.box).forEach(b => b.onclick = () => {
+      if (b.classList.contains('done') || ctx.done) return;
+      if (b.dataset.s === 'l') { selL = +b.dataset.i; $$('.mc[data-s="l"]', ctx.box).forEach(x => x.classList.toggle('sel', x === b)); }
+      else { selR = +b.dataset.i; $$('.mc[data-s="r"]', ctx.box).forEach(x => x.classList.toggle('sel', x === b)); }
+      if (selL === null || selR === null) return;
+      const li = selL, ri = selR; selL = selR = null;
+      if (li === ri) {
+        $$(`.mc[data-i="${li}"]`, ctx.box).forEach(x => { x.classList.remove('sel'); x.classList.add('done'); });
+        got++; if (!(li in first)) { first[li] = 1; answered({}, true); }
+        if (got === it.pairs.length) { $('#fb', ctx.box).innerHTML = `<b>همه درست وصل شد.</b> اشتباه: ${fa(mist)}`; ctx.fin(true, true); }
+      } else {
+        mist++; first[li] = 0; if (!(li in first) || first[li] === 0) first[li] = 0;
+        $$('.mc.sel', ctx.box).forEach(x => { x.classList.add('shake'); setTimeout(() => x.classList.remove('shake', 'sel'), 380); });
+      }
+    });
+  },
+  card(it, ctx) {
+    const U = getUnits(it.sec);
+    ctx.box.innerHTML = `<p class="hint">در ذهن جواب بدهید، بعد پاسخ را در متن ببینید.</p><p class="q">${esc(it.q.q)}</p><div id="ans"></div>
+      <div class="btnrow" id="cb"><button class="btn pri" id="cShow">نمایش پاسخ از متن</button></div>`;
+    $('#cShow').onclick = () => {
+      $('#ans').innerHTML = `<div class="quote">${it.a.map(i => `<p>${esc(U[i].t)}</p>`).join('')}<small>${srcLink(it.sec, it.a[0])}</small></div>`;
+      $('#cb').innerHTML = '<button class="btn pri" id="cY">بلد بودم</button><button class="btn" id="cN">باید مرور کنم</button>';
+      $('#cY').onclick = () => { ctx.fin(true); $('#cb').remove(); };
+      $('#cN').onclick = () => { ctx.fin(false); $('#cb').remove(); };
+    };
+  },
+};
+
+/* ── اجرای یک جلسه ── */
+function runSession(box, items, opt) {
+  opt = opt || {};
+  let i = 0, ok = 0, tot = 0; const st0 = store.stars;
+  const next = () => {
+    if (i >= items.length) return summary();
+    const it = items[i];
+    box.innerHTML = `<div class="sp"><i style="inline-size:${i / items.length * 100}%"></i></div><div class="itm" id="it"></div><div class="foot" id="ft"></div>`;
+    setCount(`${fa(i + 1)} از ${fa(items.length)}`);
+    const ctx = { box: $('#it', box), done: false, fin(r, multi) {
+      if (ctx.done) return; ctx.done = true; tot++;
+      if (it.type !== 'match') answered(it, r, opt.mult);
+      if (r) ok++;
+      if (opt.onFin) opt.onFin(r);
+      const f = $('#ft', box); if (!f) return;
+      f.innerHTML = `<button class="btn pri wide" id="nx">${i + 1 >= items.length ? 'پایان' : 'بعدی'}</button>`;
+      $('#nx').onclick = () => { i++; next(); }; $('#nx').focus({ preventScroll: true });
+    } };
+    RENDER[it.type](it, ctx);
+    scrollTo(0, 0);
+  };
+  const summary = () => {
+    setCount('');
+    const gain = store.stars - st0, d = D();
+    box.innerHTML = `<div class="done"><div class="star big" aria-hidden="true">${fa(ok)}</div>
+      <h2>${ok === tot ? 'عالی بود!' : ok >= tot / 2 ? 'خوب بود' : 'ادامه بدهید'}</h2>
+      <p>${fa(ok)} پاسخ درست از ${fa(tot)}${gain ? ` · ${fa(gain)} ستاره` : ''}</p>
+      <div class="btnrow col">${opt.next ? `<button class="btn pri" id="sN">${opt.next[0]}</button>` : ''}${opt.again ? `<button class="btn ${opt.next ? '' : 'pri'}" id="sA">دوباره</button>` : ''}<a class="btn" href="#/today">بازگشت به امروز</a></div></div>`;
+    $('#sN')?.addEventListener('click', opt.next[1]); $('#sA')?.addEventListener('click', opt.again);
+  };
+  next();
+}
+let setCount = t => { const c = $('#pc'); if (c) c.textContent = t; };
+const emptyBox = (box, t, d, btn) => { box.innerHTML = `<div class="empty"><b>${t}</b>${d}${btn ? `<br><br><a class="btn pri" href="${btn[1]}">${btn[0]}</a>` : ''}</div>`; };
+const NEED = 'پیش از این فعالیت، یک پارهٔ مطالعه را بخوانید تا متنی برای تمرین داشته باشیم.';
+const NEEDBTN = ['شروع پارهٔ امروز', '#/play/read'];
+
+/* ── پارهٔ مطالعه ── */
+function playRead(box) {
+  ensureAllUnits();
+  const P = nextPortion();
+  if (!P) return emptyBox(box, 'همهٔ متن این مسیر خوانده شد', 'برای تقویت حافظه از فعالیت‌ها یا «مرور» استفاده کنید.', ['بازگشت', '#/today']);
+  const head = `<div class="ph2"><small>${esc(P.sec.group)}</small><b>${esc(P.sec.title)}</b></div>`;
+  const U = P.U;
+  const gain = { w: 0, s: 0 };
+  const finish = () => {
+    const d = D(), pr = readProg();
+    const only = { sec: P.sec.id, idx: P.idx };
+    const can = readPool(only).length > 0;
+    box.innerHTML = `<div class="done"><div class="ring sm" style="--p:${pr}"><b>${fa(Math.round(pr * 100))}٪</b></div>
+      <h2>${gain.w ? 'پاره خوانده شد' : 'این پاره قبلاً خوانده شده بود'}</h2>
+      <p>${gain.w ? `+${fa(gain.w)} واژه · +${fa(gain.s)} جمله<br>` : ''}امروز ${fa(d.w)} از ${fa(goalW())} واژه${d.goal ? ' — هدف امروز انجام شد' : ''}</p>
+      <div class="btnrow col">${can ? '<button class="btn pri" id="rP">تمرین این پاره</button>' : ''}<button class="btn ${can ? '' : 'pri'}" id="rN">${d.goal ? 'یک پارهٔ دیگر' : 'پارهٔ بعدی'}</button><a class="btn" href="#/today">بازگشت به امروز</a></div></div>`;
+    $('#rN').onclick = () => playRead(box);
+    $('#rP')?.addEventListener('click', () => {
+      const kinds = prof().list.filter(k => ['cloze', 'order', 'hide'].includes(k));
+      let items = []; const n = store.profile === 'child' ? 3 : 4;
+      kinds.forEach(k => { items = items.concat(buildItems(k, 2, only)); });
+      items = shuffle(items).slice(0, n);
+      if (!items.length) return playRead(box);
+      runSession(box, items, { next: ['پارهٔ بعدی', () => playRead(box)] });
+    });
+    scrollTo(0, 0);
+  };
+  if (store.profile === 'child') {
+    const cards = P.idx.filter(j => U[j].k !== 'h'); const heads = P.idx.filter(j => U[j].k === 'h');
+    let c = 0;
+    const show = () => {
+      box.innerHTML = `${head}<div class="sp"><i style="inline-size:${c / cards.length * 100}%"></i></div>
+        <div class="kc"><small>جملهٔ ${fa(c + 1)} از ${fa(cards.length)}</small><p>${esc(U[cards[c]].t)}</p></div>
+        <div class="foot"><button class="btn pri wide" id="rd">خواندم ✓</button></div>`;
+      $('#rd').onclick = () => {
+        const r = markRead(P.sec, c === 0 ? heads.concat([cards[c]]) : [cards[c]]); gain.w += r.w; gain.s += r.s;
+        c++; if (c >= cards.length) finish(); else show();
+      };
+      scrollTo(0, 0);
+    };
+    show(); return;
+  }
+  box.innerHTML = `${head}<div class="portion">${P.idx.map(j => U[j].k === 'h' ? `<h3>${esc(U[j].t)}</h3>` : `<p>${esc(U[j].t)}</p>`).join('')}</div>
+    <p class="small cnt">${fa(P.w)} واژه · ${fa(P.n)} جمله</p>
+    <div class="foot"><button class="btn pri wide" id="rd">خواندم ✓</button></div><p class="small"><a class="lnk" href="#/s/${P.sec.id}/${U[P.idx[0]].b}">دیدن در متن کامل درس</a></p>`;
+  $('#rd').onclick = () => { const r = markRead(P.sec, P.idx); gain.w = r.w; gain.s = r.s; finish(); };
+  scrollTo(0, 0);
+}
+
+/* ── فعالیت‌ها ── */
+function playKind(kind) {
+  return box => {
+    ensureAllUnits();
+    const start = () => {
+      const items = buildItems(kind, sessN(kind));
+      if (!items.length) {
+        if (kind === 'match') return emptyBox(box, 'هنوز تعریفی برای تمرین نیست', 'چند پارهٔ دیگر بخوانید تا اصطلاح‌ها و معنی‌شان در دسترس باشد.', NEEDBTN);
+        if (kind === 'cards') return emptyBox(box, 'هنوز پرسشی آماده نیست', 'پرسش‌ها از درس‌هایی ساخته می‌شود که بخش بیشتری از آن‌ها را خوانده باشید.', NEEDBTN);
+        if (kind === 'review') return emptyBox(box, 'امروز چیزی برای مرور نیست', 'هر پرسشی که اشتباه یا تازه پاسخ بدهید، در روزهای بعد اینجا برمی‌گردد.', ['بازگشت', '#/today']);
+        return emptyBox(box, 'متنی برای تمرین نیست', NEED, NEEDBTN);
+      }
+      runSession(box, items, { again: start });
+    };
+    start();
+  };
+}
+function playRush(box) {
+  ensureAllUnits(); buildVoc();
+  const pool = readPool();
+  if (pool.length < 3) return emptyBox(box, 'متنی برای مسابقه نیست', NEED, NEEDBTN);
+  let score = 0, left = 60, timer = 0, over = false;
+  box.innerHTML = `<div class="rush"><div class="tb"><i></i></div><div class="rs"><span id="rT">${fa(60)}</span><span>درست: <b id="rS">${fa(0)}</b></span></div><div id="it" class="itm"></div></div>`;
+  $('.tb i', box).style.cssText = 'inline-size:100%;transition:inline-size 60s linear';
+  requestAnimationFrame(() => requestAnimationFrame(() => { const e = $('.tb i', box); if (e) e.style.inlineSize = '0%'; }));
+  const over_ = () => {
+    over = true; clearInterval(timer);
+    const prev = store.best.rush || 0; if (score > prev) store.best.rush = score; checkBadges(); save();
+    box.innerHTML = `<div class="done"><div class="star big" aria-hidden="true">${fa(score)}</div><h2>${score > prev && prev ? 'رکورد تازه!' : 'زمان تمام شد'}</h2>
+      <p>${fa(score)} پاسخ درست · بهترین: ${fa(store.best.rush || 0)}</p>
+      <div class="btnrow col"><button class="btn pri" id="sA">دوباره</button><a class="btn" href="#/today">بازگشت به امروز</a></div></div>`;
+    $('#sA').onclick = () => playRush(box);
+  };
+  const nxt = () => {
+    if (over) return;
+    let it = null, g = 0; while (!it && g++ < 30) it = makeCloze(pickWeighted(pool, 1)[0]);
+    if (!it) return over_();
+    const ctx = { box: $('#it', box), rush: true, done: false, fin(r) {
+      if (ctx.done || over) return; ctx.done = true; answered(it, r, 1); if (r) { score++; $('#rS').textContent = fa(score); }
+      setTimeout(nxt, r ? 350 : 800);
+    } };
+    RENDER.cloze(it, ctx);
+  };
+  timer = setInterval(() => { left--; const t = $('#rT'); if (t) t.textContent = fa(Math.max(0, left)); if (left <= 0) over_(); }, 1000);
+  nxt();
+  rushStop = () => { over = true; clearInterval(timer); };
+}
+let rushStop = null;
+function playDaily(box) {
+  ensureAllUnits(); buildVoc();
+  const d = D(); let it = null;
+  if (d.dk) it = entryFromKey(d.dk);
+  if (!it) {
+    const pool = readPool(); if (!pool.length) return emptyBox(box, 'متنی برای مسئلهٔ امروز نیست', NEED, NEEDBTN);
+    const r = seeded(todayKey() + store.profile + store.words);
+    for (let g = 0; g < 20 && !it; g++) { const e = pool[Math.floor(r() * pool.length)]; it = r() < .5 ? (makeCloze(e) || makeOrder(e)) : (makeOrder(e) || makeCloze(e)); }
+    if (!it) return emptyBox(box, 'مسئله‌ای ساخته نشد', 'یک پارهٔ دیگر بخوانید.', NEEDBTN);
+    d.dk = it.key; save();
+  }
+  if (d.dc) { box.innerHTML = '<div class="done"><h2>مسئلهٔ امروز را حل کردید</h2><p>فردا مسئلهٔ تازه‌ای می‌آید.</p><div class="btnrow col"><a class="btn pri" href="#/today">بازگشت به امروز</a></div></div>'; return; }
+  runSession(box, [it], { mult: 5, onFin: () => { D().dc = 1; save(); } });
+}
+const PLAY = {
+  read: ['پارهٔ مطالعه', playRead], cloze: [ACT.cloze.t, playKind('cloze')], order: [ACT.order.t, playKind('order')], hide: [ACT.hide.t, playKind('hide')],
+  match: [ACT.match.t, playKind('match')], cards: [ACT.cards.t, playKind('cards')], rush: [ACT.rush.t, playRush], review: [ACT.review.t, playKind('review')],
+  daily: [() => store.profile === 'child' ? 'جملهٔ امروز' : ACT.daily.t, playDaily],
+};
+function renderPlay(r) {
+  if (rushStop) { rushStop(); rushStop = null; }
+  const [t, fn] = PLAY[r.id]; const title = typeof t === 'function' ? t() : t;
+  document.title = title + ' | رساله آموزشی';
+  app.innerHTML = `<div class="pbar"><div class="pbar-in"><a class="icon-btn back" href="#/today" aria-label="بازگشت">${ICON.back}</a><div class="ttl">${esc(title)}</div><span class="pcount" id="pc"></span></div></div>
+    <main class="wrap play" id="pl"></main>`;
+  fn($('#pl'));
+}
+
+/* ── مطالعهٔ عادی: اعتبار بر پایهٔ ماندن روی متن ── */
+let DW = null;
+function stopDwell() { if (DW) { DW.io.disconnect(); Object.values(DW.t).forEach(clearTimeout); DW = null; } }
+function startDwell(sec) {
+  stopDwell();
+  if (!store.profile || !('IntersectionObserver' in window)) return;
+  const U = getUnits(sec), byB = {}; U.forEach((u, i) => (byB[u.b] || (byB[u.b] = [])).push(i));
+  const t = {};
+  const io = new IntersectionObserver(es => es.forEach(en => {
+    const b = +en.target.dataset.b, idx = byB[b]; if (!idx) return;
+    if (en.isIntersecting) {
+      if (t[b]) return;
+      const bits = readBits(sec); if (idx.every(i => bits[i] === '1')) return;
+      const w = idx.reduce((a, i) => a + U[i].w, 0), ms = Math.min(20000, Math.max(1200, w * 220));
+      const fire = () => {
+        if (document.visibilityState !== 'visible') { t[b] = setTimeout(fire, 2000); return; }
+        delete t[b]; io.unobserve(en.target); markRead(sec, idx);
+      };
+      t[b] = setTimeout(fire, ms);
+    } else if (t[b]) { clearTimeout(t[b]); delete t[b]; }
+  }), { rootMargin: '-12% 0px -12% 0px' });
+  $$('#doc .blk').forEach(el => io.observe(el));
+  DW = { io, t };
+}
+
+/* ── امروز ── */
+function avail(kind) {
+  const pool = readPool().length;
+  if (kind === 'match') return buildPairs() && pairPool().length >= 3 ? '' : 'پس از خواندن چند پارهٔ دیگر';
+  if (kind === 'cards') return cardPool().length ? '' : 'پس از خواندن بیشتر یک درس';
+  if (kind === 'review') return dueKeys().some(k => entryFromKey(k)) ? '' : 'امروز مروری نیست';
+  if (kind === 'rush') return pool >= 3 ? '' : 'ابتدا چند پاره بخوانید';
+  return pool ? '' : 'ابتدا یک پاره بخوانید';
+}
+function profileCard() {
+  const p = prof(), st = store.stars, lv = levelOf(st), a = 25 * (lv - 1) * (lv - 1), b = 25 * lv * lv;
+  return `<div class="pcard"><div class="pc-top"><button class="chipbtn" id="bProf"><b>${p.n}</b><small>${LEVEL[store.level].n}</small><i>تغییر</i></button>
+    <div class="stat"><b>${fa(streak())}</b><small>روز پیاپی</small></div>
+    <div class="stat"><b>${fa(st)}</b><small>ستاره</small></div></div>
+    <div class="lv"><span>سطح ${fa(lv)}</span><div class="bar"><i style="inline-size:${Math.min(100, (st - a) / (b - a) * 100)}%"></i></div><small>${fa(b - st)} ستارهٔ دیگر تا سطح ${fa(lv + 1)}</small></div></div>`;
+}
+function weekDots() {
+  const t = dayNum(todayKey()); let h = '';
+  for (let j = 6; j >= 0; j--) {
+    const k = keyOf(t - j), d = store.days[k] || {};
+    let lab = ''; try { lab = new Date(k + 'T12:00:00Z').toLocaleDateString('fa-IR', { weekday: 'narrow', timeZone: 'UTC' }); } catch (e) {}
+    h += `<div class="wd ${d.goal ? 'on' : ''} ${j === 0 ? 'now' : ''}"><i>${d.goal ? ICON.check : ''}</i><small>${lab}</small></div>`;
+  }
+  return `<div class="week" aria-label="هفتهٔ اخیر">${h}</div>`;
+}
+function renderToday(m) {
+  if (!prof()) {
+    m.innerHTML = `<div class="empty"><b>فعالیت‌ها را برای خودتان بچینید</b>سن تقریبی و میزان مطالعهٔ روزانه را انتخاب کنید تا بازی و تمرین مناسب شما آماده شود.<br><br><button class="btn pri" id="bOn">انتخاب</button></div>`;
+    $('#bOn').onclick = () => openOnboard(); return;
+  }
+  ensureAllUnits();
+  const p = prof(), d = D(), pr = readProg(), P = nextPortion();
+  const tiles = p.list.filter(k => k !== 'read').map(k => {
+    const t = k === 'daily' && store.profile === 'child' ? 'جملهٔ امروز' : ACT[k].t;
+    const why = avail(k), done = k === 'daily' && d.dc;
+    const sub = done ? 'انجام شد' : why || ACT[k].d;
+    return `<a class="at ${why && !done ? 'lock' : ''} ${done ? 'did' : ''}" href="#/play/${k}" data-why="${esc(why)}">${ICON[ACT[k].i]}<b>${t}</b><small>${sub}</small></a>`;
+  }).join('');
+  const gset = new Set(eligibleIds());
+  const mosaic = GROUPS.map(g => {
+    const its = g.items.filter(s => gset.has(s.id)); if (!its.length) return '';
+    return `<div class="mg"><b>${esc(g.name)}</b><div class="mts">${its.map(s => {
+      const c = Math.round(secCover(s) * 100);
+      return `<a class="mt ${c >= 95 ? 'full' : ''}" style="--c:${c}" href="#/s/${s.id}" aria-label="${esc(s.title)}، ${fa(c)} درصد">${c >= 95 ? ICON.check : fa(s.n)}</a>`;
+    }).join('')}</div></div>`;
+  }).join('');
+  const earned = BADGES.filter(b => store.badges[b.id]);
+  const gb = Object.keys(store.badges).filter(k => k.startsWith('g:')).map(k => k.slice(2));
+  m.innerHTML = `${profileCard()}
+  <section class="today"><div class="ring" style="--p:${pr}"><b>${fa(Math.round(pr * 100))}٪</b></div>
+    <div class="tx"><h2>${d.goal ? 'هدف امروز انجام شد' : 'هدف امروز'}</h2>
+    <p>${fa(d.w)} از ${fa(goalW())} واژه<br>${fa(d.s)} از ${fa(goalS())} جمله</p></div></section>
+  <a class="cta" href="#/play/read">${ICON.book}<span><b>${P ? (d.w ? 'پارهٔ بعدی' : 'شروع پارهٔ امروز') : 'همه خوانده شد'}</b>
+    <small>${P ? 'حدود ' + fa(P.w) + ' واژه · ' + esc(P.sec.title) : 'از فعالیت‌ها برای مرور استفاده کنید'}</small></span>${ICON.go}</a>
+  ${weekDots()}
+  <h3 class="sh">فعالیت‌ها <small>${fa(d.a)} از ${fa(goalA())} پاسخ درست امروز</small></h3>
+  <div class="atg">${tiles}</div>
+  <h3 class="sh">نقشهٔ پیشرفت <small>هر خانه یک ${store.profile === 'child' ? 'درس' : 'درس یا بخش'}</small></h3>
+  <div class="mosaic">${mosaic}</div>
+  <h3 class="sh">نشان‌ها <small>${fa(earned.length + gb.length)} از ${fa(BADGES.length)}+</small></h3>
+  <div class="bdg">${BADGES.map(b => `<div class="bd ${store.badges[b.id] ? 'on' : ''}" title="${esc(b.d)}">${ICON.star}<b>${b.n}</b><small>${b.d}</small></div>`).join('')}
+  ${gb.map(n => `<div class="bd on">${ICON.star}<b>${esc(n)}</b><small>همهٔ درس‌های این گروه خوانده شد</small></div>`).join('')}</div>`;
+  $('#bProf').onclick = () => openOnboard(true);
+  $$('.at.lock', m).forEach(a => a.onclick = e => { e.preventDefault(); toast(a.dataset.why); });
+}
+
+/* ── انتخاب سن و میزان مطالعه ── */
+const AGEHINT = { child: 'جمله‌های کوتاه و ساده، یکی‌یکی', teen: 'پاره‌های کوتاه و بازی‌های سریع', youth: 'پاره‌های کامل‌تر، تعریف‌یاب و مرور', adult: 'متن کامل‌تر با مرور منظم' };
+function openOnboard(change) {
+  const step1 = () => {
+    openSheet(`<h2>${change ? 'تغییر گروه سنی' : 'شما در کدام گروه سنی هستید؟'}</h2>
+      <p class="small">فعالیت‌ها و مقدار مطالعهٔ روزانه با سن تنظیم می‌شود. هر وقت خواستید می‌توانید عوضش کنید.</p>
+      <div class="obl">${Object.keys(AGES).map(k => `<button class="ob" data-k="${k}"><b>${AGES[k].n}</b><small>${AGES[k].r}</small><em>${AGEHINT[k]}</em></button>`).join('')}</div>
+      ${change ? '' : '<p class="skip"><button class="lnk" id="obSkip">فعلاً نه، فقط متن را بخوانم</button></p>'}`, !change);
+    $$('.ob').forEach(b => b.onclick = () => step2(b.dataset.k));
+    $('#obSkip')?.addEventListener('click', () => { store.skipAge = true; save(); closeSheet(); homeState.tab = 'lessons'; renderHome(); });
+  };
+  const step2 = k => {
+    const W = AGES[k].W;
+    openSheet(`<h2>میزان مطالعهٔ روزانه</h2><p class="small">بر پایهٔ تعداد واژه و جمله است، نه شمارهٔ درس؛ هر وقت لازم بود در تنظیمات تغییر می‌کند.</p>
+      <div class="obl">${[1, 2, 3].map(l => { const w = Math.round(W * LEVEL[l].m / 5) * 5; return `<button class="ob" data-l="${l}"><b>${LEVEL[l].n}</b><small>حدود ${fa(w)} واژه در روز</small><em>${fa(Math.max(2, Math.round(w / 11)))} جمله، چند دقیقه</em></button>`; }).join('')}</div>
+      <p class="skip"><button class="lnk" id="obBack">برگشت</button></p>`, !change);
+    $$('.ob').forEach(b => b.onclick = () => {
+      store.profile = k; store.level = +b.dataset.l; store.skipAge = false;
+      if (k === 'child' && store.fs < 21) store.fs = 22;
+      save(); applySettings(); closeSheet(); homeState.tab = 'today'; history.replaceState(null, '', '#/today'); route();
+      toast('آماده است. از «پارهٔ امروز» شروع کنید');
+    });
+    $('#obBack').onclick = step1;
+  };
+  step1();
+}
+function resetGame() {
+  Object.assign(store, { read: {}, days: {}, stars: 0, badges: {}, lb: {}, best: {}, words: 0, correct: 0, secDay: {} });
+  save();
 }
 
 /* ───────── راه‌اندازی ───────── */
