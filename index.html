@@ -894,16 +894,16 @@ function toast(msg, ms = 2200) {
 const AGES = {
   child: { n: 'کودک', r: 'تا ۱۱ سال', W: 60, Q: 3, T: 35, U: 4, minW: 5, maxW: 15, opts: 3, steps: [0, .3, .6],
     list: ['read', 'cloze', 'order', 'hide', 'daily'] },
-  teen: { n: 'نوجوان', r: '۱۲ تا ۱۷ سال', W: 150, Q: 5, T: 80, U: 8, minW: 6, maxW: 24, opts: 4, steps: [0, .3, .6, 1],
+  teen: { n: 'نوجوان', r: '۱۲ تا ۱۷ سال', W: 90, Q: 5, T: 45, U: 5, minW: 6, maxW: 24, opts: 4, steps: [0, .3, .6, 1],
     list: ['read', 'cloze', 'order', 'match', 'cards', 'rush', 'hide', 'daily'] },
-  youth: { n: 'جوان', r: '۱۸ تا ۳۵ سال', W: 300, Q: 8, T: 150, U: 14, minW: 7, maxW: 32, opts: 4, steps: [0, .3, .6, 1],
+  youth: { n: 'جوان', r: '۱۸ تا ۳۵ سال', W: 125, Q: 7, T: 60, U: 7, minW: 7, maxW: 32, opts: 4, steps: [0, .3, .6, 1],
     list: ['read', 'cloze', 'match', 'cards', 'rush', 'hide', 'review', 'daily'] },
-  adult: { n: 'بزرگسال', r: '۳۶ سال به بالا', W: 400, Q: 6, T: 200, U: 18, minW: 7, maxW: 42, opts: 4, steps: [0, .3, .6, 1],
+  adult: { n: 'بزرگسال', r: '۳۶ سال به بالا', W: 160, Q: 6, T: 75, U: 9, minW: 7, maxW: 42, opts: 4, steps: [0, .3, .6, 1],
     list: ['read', 'cloze', 'match', 'cards', 'review', 'hide', 'daily'] },
 };
-const LEVEL = { 1: { n: 'سبک', m: .6 }, 2: { n: 'متوسط', m: 1 }, 3: { n: 'جدی', m: 1.6 } };
+const LEVEL = { 1: { n: 'سبک', m: .6 }, 2: { n: 'متوسط', m: 1 }, 3: { n: 'جدی', m: 1.5 } };
 const ACT = {
-  read: { t: 'پارهٔ امروز', d: 'بخش کوتاهی از درس‌ها را بخوانید', i: 'book' },
+  read: { t: 'گام امروز', d: 'بخش کوتاهی از درس‌ها را بخوانید', i: 'book' },
   cloze: { t: 'جای خالی', d: 'واژهٔ درست را برای جای خالی انتخاب کنید', i: 'blank' },
   order: { t: 'جمله‌چین', d: 'تکه‌های جمله را به ترتیب بچینید', i: 'shuffle' },
   hide: { t: 'حفظ‌یار', d: 'جمله را کم‌کم پنهان کنید و از حفظ بگویید', i: 'eyeoff' },
@@ -927,7 +927,7 @@ Object.assign(ICON, {
   check: '<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
 });
 
-/* مسیر مطالعه‌ی هر گروه سنی (فقط برای پاره‌های روزانه و فعالیت‌ها؛ فهرست کامل درس‌ها همیشه در دسترس است) */
+/* مسیر مطالعه‌ی هر گروه سنی (فقط برای گام‌های روزانه و فعالیت‌ها؛ فهرست کامل درس‌ها همیشه در دسترس است) */
 const KID_IDS = ['l13', 'l15', 'l30', 'l33', 'l34', 'l35', 'l36', 'l37', 'l38', 'l39', 'l40', 'l42', 'l43', 'l45', 'l47', 'l58', 'l59', 'l65'];
 const TEEN_B = ['m9', 'm10', 'm11', 'm12', 'm14', 'm33', 'm35', 'm36', 'm42', 'm50'];
 const TEEN_NO = ['l22', 'l23', 'l24'];
@@ -1053,7 +1053,7 @@ function secCover(sec) {
 
 /* ── نشان‌ها ── */
 const BADGES = [
-  { id: 'first', n: 'نخستین پاره', d: 'اولین پارهٔ مطالعه را خواندید', t: () => store.words > 0 },
+  { id: 'first', n: 'نخستین گام', d: 'اولین گام مطالعه را خواندید', t: () => store.words > 0 },
   { id: 'w1k', n: 'هزار واژه', d: '۱٬۰۰۰ واژه خواندید', t: () => store.words >= 1000 },
   { id: 'w5k', n: 'پنج هزار واژه', d: '۵٬۰۰۰ واژه خواندید', t: () => store.words >= 5000 },
   { id: 'w20k', n: 'بیست هزار واژه', d: '۲۰٬۰۰۰ واژه خواندید', t: () => store.words >= 20000 },
@@ -1077,7 +1077,7 @@ function checkBadges() {
   return out;
 }
 
-/* ── مسیر مطالعه: پارهٔ بعدی بر پایهٔ تعداد واژه و جمله ── */
+/* ── مسیر مطالعه: گام بعدی بر پایهٔ تعداد واژه و جمله ── */
 function nextPortion() {
   const p = prof(); if (!p) return null;
   for (const id of eligibleIds()) {
@@ -1427,10 +1427,10 @@ function runSession(box, items, opt) {
 }
 let setCount = t => { const c = $('#pc'); if (c) c.textContent = t; };
 const emptyBox = (box, t, d, btn) => { box.innerHTML = `<div class="empty"><b>${t}</b>${d}${btn ? `<br><br><a class="btn pri" href="${btn[1]}">${btn[0]}</a>` : ''}</div>`; };
-const NEED = 'پیش از این فعالیت، یک پارهٔ مطالعه را بخوانید تا متنی برای تمرین داشته باشیم.';
-const NEEDBTN = ['شروع پارهٔ امروز', '#/play/read'];
+const NEED = 'پیش از این فعالیت، یک گام مطالعه را بخوانید تا متنی برای تمرین داشته باشیم.';
+const NEEDBTN = ['شروع گام امروز', '#/play/read'];
 
-/* ── پارهٔ مطالعه ── */
+/* ── گام مطالعه ── */
 function playRead(box) {
   ensureAllUnits();
   const P = nextPortion();
@@ -1443,9 +1443,9 @@ function playRead(box) {
     const only = { sec: P.sec.id, idx: P.idx };
     const can = readPool(only).length > 0;
     box.innerHTML = `<div class="done"><div class="ring sm" style="--p:${pr}"><b>${fa(Math.round(pr * 100))}٪</b></div>
-      <h2>${gain.w ? 'پاره خوانده شد' : 'این پاره قبلاً خوانده شده بود'}</h2>
+      <h2>${gain.w ? 'گام خوانده شد' : 'این گام قبلاً خوانده شده بود'}</h2>
       <p>${gain.w ? `+${fa(gain.w)} واژه · +${fa(gain.s)} جمله<br>` : ''}امروز ${fa(d.w)} از ${fa(goalW())} واژه${d.goal ? ' — هدف امروز انجام شد' : ''}</p>
-      <div class="btnrow col">${can ? '<button class="btn pri" id="rP">تمرین این پاره</button>' : ''}<button class="btn ${can ? '' : 'pri'}" id="rN">${d.goal ? 'یک پارهٔ دیگر' : 'پارهٔ بعدی'}</button><a class="btn" href="#/today">بازگشت به امروز</a></div></div>`;
+      <div class="btnrow col">${can ? '<button class="btn pri" id="rP">تمرین این گام</button>' : ''}<button class="btn ${can ? '' : 'pri'}" id="rN">${d.goal ? 'یک گام دیگر' : 'گام بعدی'}</button><a class="btn" href="#/today">بازگشت به امروز</a></div></div>`;
     $('#rN').onclick = () => playRead(box);
     $('#rP')?.addEventListener('click', () => {
       const kinds = prof().list.filter(k => ['cloze', 'order', 'hide'].includes(k));
@@ -1453,7 +1453,7 @@ function playRead(box) {
       kinds.forEach(k => { items = items.concat(buildItems(k, 2, only)); });
       items = shuffle(items).slice(0, n);
       if (!items.length) return playRead(box);
-      runSession(box, items, { next: ['پارهٔ بعدی', () => playRead(box)] });
+      runSession(box, items, { next: ['گام بعدی', () => playRead(box)] });
     });
     scrollTo(0, 0);
   };
@@ -1486,7 +1486,7 @@ function playKind(kind) {
     const start = () => {
       const items = buildItems(kind, sessN(kind));
       if (!items.length) {
-        if (kind === 'match') return emptyBox(box, 'هنوز تعریفی برای تمرین نیست', 'چند پارهٔ دیگر بخوانید تا اصطلاح‌ها و معنی‌شان در دسترس باشد.', NEEDBTN);
+        if (kind === 'match') return emptyBox(box, 'هنوز تعریفی برای تمرین نیست', 'چند گام دیگر بخوانید تا اصطلاح‌ها و معنی‌شان در دسترس باشد.', NEEDBTN);
         if (kind === 'cards') return emptyBox(box, 'هنوز پرسشی آماده نیست', 'پرسش‌ها از درس‌هایی ساخته می‌شود که بخش بیشتری از آن‌ها را خوانده باشید.', NEEDBTN);
         if (kind === 'review') return emptyBox(box, 'امروز چیزی برای مرور نیست', 'هر پرسشی که اشتباه یا تازه پاسخ بدهید، در روزهای بعد اینجا برمی‌گردد.', ['بازگشت', '#/today']);
         return emptyBox(box, 'متنی برای تمرین نیست', NEED, NEEDBTN);
@@ -1535,14 +1535,14 @@ function playDaily(box) {
     const pool = readPool(); if (!pool.length) return emptyBox(box, 'متنی برای مسئلهٔ امروز نیست', NEED, NEEDBTN);
     const r = seeded(todayKey() + store.profile + store.words);
     for (let g = 0; g < 20 && !it; g++) { const e = pool[Math.floor(r() * pool.length)]; it = r() < .5 ? (makeCloze(e) || makeOrder(e)) : (makeOrder(e) || makeCloze(e)); }
-    if (!it) return emptyBox(box, 'مسئله‌ای ساخته نشد', 'یک پارهٔ دیگر بخوانید.', NEEDBTN);
+    if (!it) return emptyBox(box, 'مسئله‌ای ساخته نشد', 'یک گام دیگر بخوانید.', NEEDBTN);
     d.dk = it.key; save();
   }
   if (d.dc) { box.innerHTML = '<div class="done"><h2>مسئلهٔ امروز را حل کردید</h2><p>فردا مسئلهٔ تازه‌ای می‌آید.</p><div class="btnrow col"><a class="btn pri" href="#/today">بازگشت به امروز</a></div></div>'; return; }
   runSession(box, [it], { mult: 5, onFin: () => { D().dc = 1; save(); } });
 }
 const PLAY = {
-  read: ['پارهٔ مطالعه', playRead], cloze: [ACT.cloze.t, playKind('cloze')], order: [ACT.order.t, playKind('order')], hide: [ACT.hide.t, playKind('hide')],
+  read: ['گام مطالعه', playRead], cloze: [ACT.cloze.t, playKind('cloze')], order: [ACT.order.t, playKind('order')], hide: [ACT.hide.t, playKind('hide')],
   match: [ACT.match.t, playKind('match')], cards: [ACT.cards.t, playKind('cards')], rush: [ACT.rush.t, playRush], review: [ACT.review.t, playKind('review')],
   daily: [() => store.profile === 'child' ? 'جملهٔ امروز' : ACT.daily.t, playDaily],
 };
@@ -1583,11 +1583,11 @@ function startDwell(sec) {
 /* ── امروز ── */
 function avail(kind) {
   const pool = readPool().length;
-  if (kind === 'match') return buildPairs() && pairPool().length >= 3 ? '' : 'پس از خواندن چند پارهٔ دیگر';
+  if (kind === 'match') return buildPairs() && pairPool().length >= 3 ? '' : 'پس از خواندن چند گام دیگر';
   if (kind === 'cards') return cardPool().length ? '' : 'پس از خواندن بیشتر یک درس';
   if (kind === 'review') return dueKeys().some(k => entryFromKey(k)) ? '' : 'امروز مروری نیست';
-  if (kind === 'rush') return pool >= 3 ? '' : 'ابتدا چند پاره بخوانید';
-  return pool ? '' : 'ابتدا یک پاره بخوانید';
+  if (kind === 'rush') return pool >= 3 ? '' : 'ابتدا چند گام بخوانید';
+  return pool ? '' : 'ابتدا یک گام بخوانید';
 }
 function profileCard() {
   const p = prof(), st = store.stars, lv = levelOf(st), a = 25 * (lv - 1) * (lv - 1), b = 25 * lv * lv;
@@ -1632,7 +1632,7 @@ function renderToday(m) {
   <section class="today"><div class="ring" style="--p:${pr}"><b>${fa(Math.round(pr * 100))}٪</b></div>
     <div class="tx"><h2>${d.goal ? 'هدف امروز انجام شد' : 'هدف امروز'}</h2>
     <p>${fa(d.w)} از ${fa(goalW())} واژه<br>${fa(d.s)} از ${fa(goalS())} جمله</p></div></section>
-  <a class="cta" href="#/play/read">${ICON.book}<span><b>${P ? (d.w ? 'پارهٔ بعدی' : 'شروع پارهٔ امروز') : 'همه خوانده شد'}</b>
+  <a class="cta" href="#/play/read">${ICON.book}<span><b>${P ? (d.w ? 'گام بعدی' : 'شروع گام امروز') : 'همه خوانده شد'}</b>
     <small>${P ? 'حدود ' + fa(P.w) + ' واژه · ' + esc(P.sec.title) : 'از فعالیت‌ها برای مرور استفاده کنید'}</small></span>${ICON.go}</a>
   ${weekDots()}
   <h3 class="sh">فعالیت‌ها <small>${fa(d.a)} از ${fa(goalA())} پاسخ درست امروز</small></h3>
@@ -1647,7 +1647,7 @@ function renderToday(m) {
 }
 
 /* ── انتخاب سن و میزان مطالعه ── */
-const AGEHINT = { child: 'جمله‌های کوتاه و ساده، یکی‌یکی', teen: 'پاره‌های کوتاه و بازی‌های سریع', youth: 'پاره‌های کامل‌تر، تعریف‌یاب و مرور', adult: 'متن کامل‌تر با مرور منظم' };
+const AGEHINT = { child: 'جمله‌های کوتاه و ساده، یکی‌یکی', teen: 'گام‌های کوتاه و بازی‌های سریع', youth: 'گام‌های کامل‌تر، تعریف‌یاب و مرور', adult: 'متن کامل‌تر با مرور منظم' };
 function openOnboard(change) {
   const step1 = () => {
     openSheet(`<h2>${change ? 'تغییر گروه سنی' : 'شما در کدام گروه سنی هستید؟'}</h2>
@@ -1666,7 +1666,7 @@ function openOnboard(change) {
       store.profile = k; store.level = +b.dataset.l; store.skipAge = false;
       if (k === 'child' && store.fs < 21) store.fs = 22;
       save(); applySettings(); closeSheet(); homeState.tab = 'today'; history.replaceState(null, '', '#/today'); route();
-      toast('آماده است. از «پارهٔ امروز» شروع کنید');
+      toast('آماده است. از «گام امروز» شروع کنید');
     });
     $('#obBack').onclick = step1;
   };
